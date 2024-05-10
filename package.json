@@ -1,7 +1,7 @@
 {
   "name": "go-fast-snippets",
   "displayName": "Go Fast Snippets",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "go-snippets",
   "description": "An extension to accelerate the process of developing applications with GO lang.",
   "main": "extension.js",
@@ -40,12 +40,6 @@
    "repository": {
     "type": "git",
     "url": "https://github.com/kauemurakami/go-snippets.git"
-  },
-   "categories": [
-    "G0",
-    "go",
-    "golang",
-    "Snippets",
-    "autocomplete"
-  ]
+  }
+  
 }
