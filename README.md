@@ -72,7 +72,7 @@ for var := initial-value; var operator value ; var factor {
  
 }
 ```
-Where var is initially pre-selected to be defined as you wish, for example ```i:= 0```, then when giving a TAB it will choose the ```initial value``` of ```var```, all ```var```, will be completed together with the first definition of ```var```, that is, if initially the first ```var``` is ```i```, all others ```var``` will also be, among this too, when giving a TAB, we must also define the operator to stop ```for```, == for example, then we define the ```factor`` ` which can be ```++``` ```--``` for example.<br/><br/> 
+Where var is initially pre-selected to be defined as you wish, for example ```k:= 0```, then when giving a TAB it will choose the ```initial value``` of ```var```, all ```var```, will be completed together with the first definition of ```var```, that is, if initially the first ```var``` is ```k```, all others ```var``` will also be, among this too, when giving a TAB, we must also define the operator to stop ```for```, == for example, then we define the ```factor`` ` which can be ```++``` ```--``` for example.<br/><br/> 
 
 *goforrange*  
 Here we join our ```for``` with ```range``` to retrieve values, when typing ```goforrange``` it will generate this code snippet:  

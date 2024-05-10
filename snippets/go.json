@@ -63,7 +63,7 @@
   "GoFor": {
     "prefix": "gofor",
     "body": [
-      "  for ${1:var} := ${2:initial-value}; ${1:var} ${3:operator} ${4:value} ; ${1:var} ${5:factor} {",
+      "  for ${1:k} := ${2:initial-value}; ${1:k} ${3:operator} ${4:value} ; ${1:k} ${5:factor} {",
       " ",
       "  }"
     ],
