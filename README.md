@@ -1,9 +1,20 @@
 [![pt-br](https://img.shields.io/badge/language-pt--br-green.svg)](https://github.com/kauemurakami/go-snippets/blob/main/README.pt-br.md)
 [![en](https://img.shields.io/badge/language-en-orange.svg)](https://github.com/kauemurakami/go-snippets/blob/main/README.md)  
 
+
+
+
 ## Go Snippets
 Extension for vscode with autocompletes for GO codes.
 *Speed ​​up* your development process with shortcuts that free you from rewriting routine code, such as functions, variables, structs, etc., see the available snippets:<br/><br/>
+Here are some examples of using snippets, you can see the rest of the options below, in this README.<br/>  
+
+<video width="560" height="240" controls>
+  <source src="./preview.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video><br/>
+
+
 *gomain*  
 When writing ```gomain``` in a file and selecting it for autocomplete it will generate the basic code for a file, for example, start by writing ```gomain```, or just ```go``` and you will see the full snippet options:  
 ```go
