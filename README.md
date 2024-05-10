@@ -4,7 +4,7 @@
 
 
 
-## Go Snippets
+## Go Fast Snippets
 Extension for vscode with autocompletes for GO codes.
 *Speed ​​up* your development process with shortcuts that free you from rewriting routine code, such as functions, variables, structs, etc., see the available snippets:<br/><br/>
 Here are some examples of using snippets, you can see the rest of the options below, in this README.<br/>  
