@@ -1,4 +1,4 @@
-## Go Snippets
+## Go Fast Snippets
 [![pt-br](https://img.shields.io/badge/language-pt--br-green.svg)](https://github.com/kauemurakami/go-snippets/blob/main/README.pt-br.md)
 [![en](https://img.shields.io/badge/language-en-orange.svg)](https://github.com/kauemurakami/go-snippets/blob/main/README.md)
 [![Star on GitHub](https://img.shields.io/github/stars/kauemurakami/go-snippets.svg?style=flat&logo=github&colorB=deeppink&label=stars)](https://github.com/kauemurakami/get_snippets_extension)
@@ -14,7 +14,7 @@ Here are some examples of using snippets, you can see the rest of the options be
   Your browser does not support the video tag.
 </video><br/>
 
-*gomain*  
+*```gomain```*
 Ao escrever ```gomain``` em um arquivo e seleciona-lo para o autocomplete ele irá gerar o código básico de um arquivo, exemplo, começe escrevendo ```gomain```, ou apenas ```go``` e verá as opções completas dos snippets:  
 ```go
 //gomain gerá está estrutura
