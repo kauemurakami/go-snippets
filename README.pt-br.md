@@ -7,7 +7,7 @@
 
 Extensão para vscode com autocompletes para códigos GO.  
 *Acelere* o seu processo de desenvolvimento com atalhos que te livram de reescrever códigos rotineiros, como funções, variáveis, structs e etc, veja os snippets disponíveis:<br/><br/>
-Here are some examples of using snippets, you can see the rest of the options below, in this README.<br/>  
+Aqui estão alguns exemplos de uso de trechos de código. Você pode ver o resto das opções abaixo, neste README.<br/>  
 
 *```gomain```*  
 Ao escrever ```gomain``` em um arquivo e seleciona-lo para o autocomplete ele irá gerar o código básico de um arquivo, exemplo, começe escrevendo ```gomain```, ou apenas ```go``` e verá as opções completas dos snippets:  
