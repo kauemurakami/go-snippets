@@ -14,7 +14,7 @@ Here are some examples of using snippets, you can see the rest of the options be
   Your browser does not support the video tag.
 </video><br/>
 
-*```gomain```*
+*```gomain```*  
 Ao escrever ```gomain``` em um arquivo e seleciona-lo para o autocomplete ele irá gerar o código básico de um arquivo, exemplo, começe escrevendo ```gomain```, ou apenas ```go``` e verá as opções completas dos snippets:  
 ```go
 //gomain gerá está estrutura
