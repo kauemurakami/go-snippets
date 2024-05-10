@@ -7,7 +7,7 @@
 
 Extensão para vscode com autocompletes para códigos GO.  
 *Acelere* o seu processo de desenvolvimento com atalhos que te livram de reescrever códigos rotineiros, como funções, variáveis, structs e etc, veja os snippets disponíveis:<br/><br/>
-Here are some examples of using snippets, you can see the rest of the options below, in this README.<br/>  
+Aqui estão alguns exemplos de uso de trechos de código. Você pode ver o resto das opções abaixo, neste README.<br/>  
 
 <video width="560" height="240" controls>
   <source src="./preview.mp4" type="video/mp4">
