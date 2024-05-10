@@ -1,0 +1,117 @@
+{
+  "GoMainSnippet": {
+    "prefix": "gomain",
+    "body": [
+      "package main",
+      "",
+      "func main() {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Generate a main code strucuture"
+  },
+  "GoFuncSnippet": {
+    "prefix": "gofunc",
+    "body": [
+      "  func ${1:name}(${2:params} ${3:type}) ${4: returnType} {",
+      "    return ${2:params}",
+      "  }"
+    ],
+    "description": "Generate a function"
+  },
+  "GoEmptyFuncSnippet": {
+    "prefix": "gofuncempty",
+    "body": [
+      "  func ${1:name}() {",
+      "    \t$0",
+      "  }"
+    ],
+    "description": "Generate a function"
+  },
+  "GoFuncWithError": {
+    "prefix": "gofuncerr",
+    "body": [
+      "func ${1:name}(${2:params} ${3:type}) (${4:returnType}, error) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Generate a function with error return"
+  },
+  "GoVarType": {
+    "prefix": "govartype",
+    "body": [
+      "  var ${1:name} ${2:type}"
+    ],
+    "description": "Generate a variable with type"
+  },
+   "GoVar": {
+    "prefix": "govar",
+    "body": [
+      "  ${1:name} := ${2:val}"
+    ],
+    "description": "Generate a variable without type, inference"
+  },
+  "GoIf": {
+    "prefix": "goif",
+    "body": [
+      "  if ${1:var} ${2:operator} ${3:val} {",
+      "",
+      "  }"
+    ],
+    "description": "Generate a if"
+  },
+  "GoFor": {
+    "prefix": "gofor",
+    "body": [
+      "  for ${1:var} := ${2:initial-value}; ${1:var} ${3:operator} ${4:value} ; ${1:var} ${5:factor} {",
+      " ",
+      "  }"
+    ],
+    "description": "Generate a simple for"
+  },
+  "GoRange": {
+    "prefix": "goforrange",
+    "body": [
+      "  for index, ${1:obj} := range ${2:array-or-slice} {", 
+      "    \t$0",
+      "  }"
+    ],
+    "description": "Generate a simple for with range"
+  },
+  "GoStruct": {
+    "prefix": "gostruct",
+    "body": [
+    "  type ${1:name-struct} struct {",
+    "    ${2:varname} ${3:type}",
+    "  }"
+    ],
+    "description": "Generate a struct model"
+  },
+  "GoInitFunction": {
+    "prefix": "goinit",
+    "body": [
+      "func init() {",
+      "    \t$0",
+      "}"
+    ],
+    "description": "Generate init function"
+  },
+  "GoReadInput": {
+    "prefix": "goreadinput",
+    "body": [
+      "fmt.Print(\"Enter input: \")",
+      "var input ${1:type}",
+      "fmt.Scanln(&input)"
+    ],
+    "description": "Read input from user"
+  },
+  "GoErrorHandling": {
+    "prefix": "goerr",
+    "body": [
+      "if err != nil {",
+      "\tlog.Fatal(err)",
+      "}"
+    ],
+    "description": "Handle error with log.Fatal"
+  }
+}

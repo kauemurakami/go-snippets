@@ -1,0 +1,41 @@
+{
+  "name": "go-snippets",
+  "version": "1.0.0",
+  "description": "Snippets to generate code in GO lang",
+  "main": "extension.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "keywords": [
+    "vscode",
+    "go",
+    "snippets",
+    "go-lang"
+  ],
+  "author": "Kauê Tomaz Murakami",
+  "license": "MIT",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "go",
+        "path": "./snippets/go.json"
+      }
+    ]
+  },
+  "engines": {
+    "vscode": "^1.0.0"
+  },
+   "activationEvents": [
+    "onCommand:extension.go" 
+  ],
+  "dependencies": {
+   
+  },
+  "devDependencies": {
+    "vscode": "^1.0.0"
+  },
+   "repository": {
+    "type": "git",
+    "url": "https://github.com/kauemurakami/go-snippets.git"
+  }
+}
