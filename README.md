@@ -19,22 +19,30 @@ func main() {
 	
 }
 ```  
+*```gofile```*  
+
+
+*```gomap```*  
+
+*```gomapvalues```*  
+
+
 *```gofunc```*  
 When writing the ```gofunc``` snippet it will return us a function with autocompletes in the function name, parameter and return type, just switch with the TAB key after inserting one by one, let's see what ```gofunc` `` generates us:  
 ```go
 //gofunc
-	func name(params type)  returnType {
-		return params
-	}
+func name(params type)  returnType {
+  return params
+}
 ```
 Remembering that, initially ```params``` is the first attribute to be inserted and is mirrored in the two values, from a TAB and will jump to ```type```, when filling in another TAB and will be in ` ``returnType```, test it.<br/><br/>
 
 *```gofuncempty```*  
 Here you have the option of creating an empty function, without parameters and without returns, so when typing ```gofun``` it will appear, but in the case of an empty function we will use the command ```gofuncempty``` which gives us will generate:  
 ```go
-	func name() {
+func name() {
 			
-	}
+}
 ```
 Always remember that ```name``` has already been selected for name change.<br/><br/>
 
@@ -91,11 +99,11 @@ Always remember that these defined "names" can be changed by navigating between 
 *```gostruct```*  
 Here, when typing ```gostruct``` you will create a model of a struct, let's see:  
 ```go
-type name-struct struct {
-	varname type
+type name struct {
+  varname type
 }
 ```
-Starting by defining ```name-struct``` with a TAB we can define ```varname``` and with another TAB we define the ```type```<br/><br/>
+Starting by defining ```name``` with a TAB we can define ```varname``` and with another TAB we define the ```type```<br/><br/>
 
 *```goinit```*  
 Here, by typing ```goinit``` we create the ```init()``` function that starts before all the functions in the .go file, let's see:  
@@ -110,7 +118,7 @@ Here we don't need to define any parameters.<br/><br/>
 With ````goerr```` we can treat the error with ```log.Fatal(err)``` in a simple if, or as you wish:  
 ```go
 if err != nil {
-	log.Fatal(err)
+  log.Fatal(err)
 }
 ```
 ```log.Fatal()``` was used as an example, you could handle this error in different ways.<br/><br/>

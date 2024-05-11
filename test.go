@@ -1,5 +1,17 @@
+//gofile
+package name
+
+func init() {
+	
+}
+
+func main() {
+	
+}
+
 // gomain
-package main
+package a
+
 
 //goinit
 func init() {
@@ -26,6 +38,17 @@ if len(names) < 3 {
 
 }
 
+//gointerface
+type name interface {
+ "exp()" : "type", 
+	
+}
+//gointerfacegeneric
+func name(nameinterface interface{}) {
+ fmt.Println(interf) 
+	
+}
+
 func main() {
 	//govar
 	v1 := "abc"
@@ -40,6 +63,17 @@ func main() {
 		log.Fatal(err)
 	}
 
+
+	//gomapvalues
+	mapname := map[keytype]valuetype{
+	 "key1" : "Value1", 
+	 "key2" : "Value1", 
+	}
+
+	//gomap
+	var varname map[keytype]valuetype
+		
+	}
 	//gofor
 	for k := 0; k < 10 ; k++ {
 			fmt.Println(k)

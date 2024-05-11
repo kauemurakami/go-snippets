@@ -10,43 +10,112 @@ Extensão para vscode com autocompletes para códigos GO.
 Aqui estão alguns exemplos de uso de trechos de código. Você pode ver o resto das opções abaixo, neste README.<br/>  
 
 *```gomain```*  
+![](assets/gomain.gif)
 Ao escrever ```gomain``` em um arquivo e seleciona-lo para o autocomplete ele irá gerar o código básico de um arquivo, exemplo, começe escrevendo ```gomain```, ou apenas ```go``` e verá as opções completas dos snippets:  
 ```go
-//gomain gerá está estrutura
 package main
 
 func main() {
 	
 }
+```
+Simples assim <br/><br/>
+
+*```goinit```*  
+Aqui ao digitar ```goinit``` criamos a função ```init()``` que inicia antes de todas do arquivo.go, vejamos:  
+```go
+func init() {
+			
+}
+```
+Aqui não precisamos definir nenhum parâmetro.<br/><br/>
+
+*```gofile```*  
+Ao digitar ```gofile``` em um arquivo vazio ele gera o código básico de um arquivo ```.go```, com ```name``` pré selecionado para alteração:  
+```go
+package name
+
+func init() {
+	
+}
+
+func main() {
+	
+}
 ```  
+```gofile``` nos gera um código um pouco mais completo que ```gomain```, nos fornecendo também ```goinit``` <br/><br/>
 
 *```gofunc```*  
-Ao escrever o snippet ```gofunc``` ele irá nos retornar uma função com autocompletes no noma da função, parâmetro e tipo de retorno, basta alternar com a tecla TAB após iniserir um a um, vejamos o que ```gofunc``` nos gera:  
+Ao escrever ```gofunc``` ele irá nos retornar uma função com autocompletes no nome da função, parâmetro e tipo de retorno, basta alternar com a tecla TAB após iniserir um a um, vejamos o que ```gofunc``` nos gera:  
 ```go
 //gofunc
-	func name(params type)  returnType {
-		return params
-	}
+func name(params type)  returnType {
+  return params
+}
 ```
-Lembrando que, inicialmente ```params``` é o primeiro atributo a ser inserido e é espelhado nos dois valors, de um TAB e ira pular para o ```type```, ao preencher de outro TAB e estará em ```returnType```, faça o teste.<br/><br/>
+Lembrando que, inicialmente ```name``` é o primeiro atributo a ser inserido, de um TAB e ira pular para o/os ```params```, podendo inserir um ou mais parâmetros separados por vírgula, de outro TAB e estará em ```type``` que é o tipo do ```params``` no ultimo TAB irá definir o tipo do retorno ```returnType```, faça o teste.<br/><br/>
 
 *```gofuncempty```*  
 Aqui você tem a opção de criar uma função vazia, sem parâmetros e sem retornos, logo ao digitar ```gofun``` ele aparecerá, mas para o caso de uma função vazia utilizaremos o comando ```gofuncempty``` que nos gerará:  
 ```go
-	func name() {
-			
-	}
+func name() {
+		
+}
 ```
 Lembrando sempre que ```name``` já vira selecionada para alteração do nome.<br/><br/>
 
 *```gofuncerr```*   
-Uma função que pode receber um erro e trata-lo, basta digitar ```gofuncerr``` e teremos o seguinte resultado:  
+Uma função que pode receber um erro e trata-lo, basta começar a digitar ```gofuncerr``` e teremos o seguinte resultado:  
 ```go
 func name(params) (returnType, error) {
 	
 }
 ```
 Com o mesmo modus operandi dos outros snippets que possuem mais de um valor para ser alterado, essa função também segue esses padrões, podendo ser alternadas usando TAB ao declarar um valor e ir para o próximo.<br/><br/>
+
+*```gostruct```*   
+Aqui ao digitar ```gostruct``` você irá criar um modelo de um struct, vejamos:  
+```go
+type name struct {
+  varname type
+}
+```
+Comçando definindo ```name``` com um TAB podemos definir ```varname``` e com outro TAB definimos o ```type```<br/><br/>
+
+*```gointerface```*  
+Aqui ao digitarmos ```gointerface``` ele nos dara um snippet de uma interface:  
+```go
+type name interface {
+  
+}
+```
+Deixando o nome pré-selecionado para sua alteração.<br/><br/>
+
+*```gointerfacegeneric```*  
+Aqui ao digitarmos  ```gointer..``` já nos mostrará o snippet que buscamos ```gointerfacegeneric```, ao seleciona-lo, nos gerará o seguinte código:  
+```go
+func name(nameinterface interface{}) {
+  
+}
+```
+Como primeiro primeiro atributo pré-selecionado para renomeação o ```name``` e com um TAB definimos também ```nameinterface``` <br/><br/>
+
+*```gomap```*  
+Cria uma declaração de uma variável map com tipo da chave e tipo do valor, neste caso segue preselecionado para alteração da ```varname```, ```keytype``` e ```valuetype```:  
+```go
+var varname map[keytype]valuetype
+```  
+
+*```gomapvalues```*  
+Com ```gomapvalues``` você irá criar um map por inferência, ja podendo atribuir valores, vejamos o código gerado ao usar o snippet:  
+```go
+mapname := map[keytype]valuetype{
+  "key1" : "Value1", 
+  "key2" : "Value1", 
+}
+```
+Seguindo o mesmo padrão em ordem, ```mapname``` é o primeiro pré-selecionado, ao navegar com TAB você segue para ```keytpe``` -> ```valuetype``` -> ```key1``` -> ```value1``` e assim por diante podendo alterá-los sem esforço.<br/><br/>
+
 
 *```govar```*  
 Aqui ao digitar ```govar``` e selecionarmos o auto complete, ele nos cria uma variável simples, recebendo o tipo por inferência, recebendo um ```name``` e um ```type```, veja:  
@@ -89,29 +158,12 @@ for index, obj := range array-or-slice {
 ```
 Lembrando sempre que esses "nomes" definidos vão poder ser alterado navegando entre eles com TAB.<br/><br/>
 
-*```gostruct```*   
-Aqui ao digitar ```gostruct``` você irá criar um modelo de um struct, vejamos:  
-```go
-type name-struct struct {
-	varname type
-}
-```
-Comçando definindo ```name-struct``` com um TAB podemos definir ```varname``` e com outro TAB definimos o ```type```<br/><br/>
-
-*```goinit```*  
-Aqui ao digitar ```goinit``` criamos a função ```init()``` que inicia antes de todas do arquivo.go, vejamos:  
-```go
-func init() {
-			
-}
-```
-Aqui não precisamos definir nenhum parâmetro.<br/><br/>
 
 *```goerr```*   
 Com ````goerr```` podemos tratar o erro com um ```log.Fatal(err)``` em um simples if, ou como desejar:  
 ```go
 if err != nil {
-	log.Fatal(err)
+  log.Fatal(err)
 }
 ```
 ```log.Fatal()``` foi usado como exemplo, você poderia tratar esse erro de diferentes modos.<br/><br/>
