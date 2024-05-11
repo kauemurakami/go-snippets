@@ -10,6 +10,15 @@
     ],
     "description": "Generate a basic main code strucuture"
   },
+    "GoInitFunction": {
+    "prefix": "goinit",
+    "body": [
+      "func init() {",
+      " \t$0",
+      "}"
+    ],
+    "description": "Generate init function"
+  },
   "GoFileSnippet": {
     "prefix": "gofile",
     "body": [
@@ -152,15 +161,6 @@
       "}"
     ],
     "description": "Handle error with log.Fatal"
-  },
-  "GoInitFunction": {
-    "prefix": "goinit",
-    "body": [
-      "func init() {",
-      " \t$0",
-      "}"
-    ],
-    "description": "Generate init function"
   },
   "GoReadInput": {
     "prefix": "goreadinput",
