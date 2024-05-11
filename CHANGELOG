@@ -1,0 +1,27 @@
+# v1.0.0
+  - Create snippets and project
+  - gomain -> generate basic main file
+  - gofunc -> generate a function with params and return type
+  - gofuncempty -> generate empty function 
+  - gofuncerr -> generate function with may return an error
+  - govar -> generate var without type defined or inference definition
+  - govartype -> generate var with type
+  - gofor -> generate basic for with counter initialization
+  - goforrange -> generate a range to iterate
+  - goif -> generate simple if with values and operator
+  - goerr -> generate a if that checks var is error
+  - gostruct -> generate a basic struct
+  - goreadinput -> generate code to read input from user
+
+#v1.0.1
+ - Fix reame and icon extension
+
+# v1.2.0
+  - Add gifs examples in readme's
+  - Add more snippets
+    - gomap -> generate var map without values
+    - gomapvalues -> generate maps with values
+    - gofile -> generate basic code to file.go
+    - goinit -> generate function init() 
+    - gointerface -> generate simple interface
+    - gointerfacegeneric -> generate genric interface function
