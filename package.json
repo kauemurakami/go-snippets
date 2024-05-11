@@ -1,7 +1,7 @@
 {
   "name": "go-fast-snippets",
   "displayName": "Go Fast Snippets",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "publisher": "go-snippets",
   "description": "An extension to accelerate the process of developing applications with GO lang.",
   "main": "extension.js",
