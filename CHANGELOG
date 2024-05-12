@@ -25,3 +25,8 @@
     - goinit -> generate function init() 
     - gointerface -> generate simple interface
     - gointerfacegeneric -> generate genric interface function
+
+#v1.2.1
+  - Add more snippets
+    - goselect -> generace a simple select with case
+    

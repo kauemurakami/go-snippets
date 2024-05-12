@@ -114,6 +114,19 @@
     ],
     "description": "Generate a if"
   },
+  "GoSelect": {
+    "prefix": "goselect",
+    "body": [
+    "select {",
+    " case ${1:obj} := <-${2:channel}:",
+    "   \t$0",
+		"}",
+      "if ${1:var} ${2:operator} ${3:val} {",
+      " \t$0",
+      "}"
+    ],
+    "description": "Generate a select"
+  },
    "GoMap": {
     "prefix": "gomap",
     "body": [
