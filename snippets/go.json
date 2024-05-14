@@ -34,6 +34,17 @@
     ],
     "description": "Generate a file with basic code strucuture"
   },
+  "GoTestFile": {
+    "prefix": "gotestfile",
+    "body": [
+      "package name ${1:name}_test",
+      "",
+      "func Test${2:NameFunction}(t *testing.T) {",
+      " \t$0",
+      "}"
+    ],
+    "description": "generate code to test file"
+  },
   "GoFuncSnippet": {
     "prefix": "gofunc",
     "body": [
@@ -60,6 +71,15 @@
       "}"
     ],
     "description": "Generate a function which may result in an error"
+  },
+   "GoTest": {
+    "prefix": "gofunctest",
+    "body": [
+      "func Test${2:NameFunction}(t *testing.T) {",
+      " \t$0",
+      "}"
+    ],
+    "description": "Generate a function test"
   },
   "GoStruct": {
     "prefix": "gostruct",
