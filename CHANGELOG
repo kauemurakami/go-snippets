@@ -29,4 +29,5 @@
 #v1.2.1
   - Add more snippets
     - goselect -> generace a simple select with case
-    
+    - goroutineanon -> generate anonymous go routine
+    - goroutine -> generate go routine with exist function

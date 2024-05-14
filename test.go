@@ -9,8 +9,13 @@ func main() {
 	
 }
 
+type user struct {
+ name string
+	
+}
+
 // gomain
-package a
+package main
 
 
 //goinit

@@ -127,6 +127,22 @@
     ],
     "description": "Generate a select"
   },
+  "GoRoutineAnon": {
+    "prefix": "goroutineanon",
+    "body": [
+    "go func(){",
+    " \t$0",
+    "}()"
+    ],
+    "description": "Generate a goroutine anon"
+    },
+    "GoRoutine": {
+    "prefix": "goroutine",
+    "body": [
+    "go ${1:func}(${2:params})"
+    ],
+    "description": "Generate go routine with function"
+  },
    "GoMap": {
     "prefix": "gomap",
     "body": [
