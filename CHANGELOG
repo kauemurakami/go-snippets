@@ -16,7 +16,7 @@
 #v1.0.1
  - Fix reame and icon extension
 
-# v1.2.0
+# v1.1.0
   - Add gifs examples in readme's
   - Add more snippets
     - gomap -> generate var map without values
@@ -25,3 +25,14 @@
     - goinit -> generate function init() 
     - gointerface -> generate simple interface
     - gointerfacegeneric -> generate genric interface function
+
+#v1.2.0
+  - Add more snippets
+    - goselect -> generace a simple select with case
+    - goroutineanon -> generate anonymous go routine
+    - goroutine -> generate go routine with exist function
+    - gotestfile -> generate file and function test to any package
+    - gotest -> generate a function test
+    - init add CLI to package
+#v2.0.0
+  

@@ -34,6 +34,17 @@
     ],
     "description": "Generate a file with basic code strucuture"
   },
+  "GoTestFile": {
+    "prefix": "gotestfile",
+    "body": [
+      "package ${1:name}",
+      "import \"testing\"",
+      "func Test${2:NameFunction}(t *testing.T) {",
+      " \t$0",
+      "}"
+    ],
+    "description": "generate code to test file"
+  },
   "GoFuncSnippet": {
     "prefix": "gofunc",
     "body": [
@@ -60,6 +71,15 @@
       "}"
     ],
     "description": "Generate a function which may result in an error"
+  },
+   "GoTest": {
+    "prefix": "gofunctest",
+    "body": [
+      "func Test${2:NameFunction}(t *testing.T) {",
+      " \t$0",
+      "}"
+    ],
+    "description": "Generate a function test"
   },
   "GoStruct": {
     "prefix": "gostruct",
@@ -113,6 +133,35 @@
       "}"
     ],
     "description": "Generate a if"
+  },
+  "GoSelect": {
+    "prefix": "goselect",
+    "body": [
+    "select {",
+    " case ${1:obj} := <-${2:channel}:",
+    "   \t$0",
+		"}",
+      "if ${1:var} ${2:operator} ${3:val} {",
+      " \t$0",
+      "}"
+    ],
+    "description": "Generate a select"
+  },
+  "GoRoutineAnon": {
+    "prefix": "goroutineanon",
+    "body": [
+    "go func(){",
+    " \t$0",
+    "}()"
+    ],
+    "description": "Generate a goroutine anon"
+    },
+    "GoRoutine": {
+    "prefix": "goroutine",
+    "body": [
+    "go ${1:func}(${2:params})"
+    ],
+    "description": "Generate go routine with function"
   },
    "GoMap": {
     "prefix": "gomap",
