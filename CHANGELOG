@@ -33,3 +33,6 @@
     - goroutine -> generate go routine with exist function
     - gotestfile -> generate file and function test to any package
     - gotest -> generate a function test
+    - init add CLI to package
+#v2.0.0
+  

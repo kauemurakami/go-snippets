@@ -37,7 +37,7 @@
   "GoTestFile": {
     "prefix": "gotestfile",
     "body": [
-      "package ${1:name}_test",
+      "package ${1:name}",
       "import \"testing\"",
       "func Test${2:NameFunction}(t *testing.T) {",
       " \t$0",
