@@ -143,6 +143,7 @@ go func(){
 	
 }()
 ```  
+
 ### goselect
 Uma estrutura muito parecida com switch na tomada de decisão, mas com foco em uso com concorrência, basta usar nosso snippet ```goselect``` para criar uma estrutura básica:  
 ```go
@@ -153,7 +154,6 @@ select {
 		fmt.Println("a")
 }
 ```  
-
 
 ### gomap
 Cria uma declaração de uma variável map com tipo da chave e tipo do valor, neste caso segue preselecionado para alteração da ```varname```, ```keytype``` e ```valuetype```:  
