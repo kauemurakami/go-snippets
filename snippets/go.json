@@ -139,13 +139,12 @@
     "body": [
     "select {",
     " case ${1:obj} := <-${2:channel}:",
-    "   \t$0",
-		"}",
-      "if ${1:var} ${2:operator} ${3:val} {",
-      " \t$0",
-      "}"
+    " \t$0",
+    " case ${3:obj} := <-${4:channel}:",
+    " ",
+		"}"
     ],
-    "description": "Generate a select"
+    "description": "Generate a select structure"
   },
   "GoRoutineAnon": {
     "prefix": "goroutineanon",
@@ -159,7 +158,9 @@
     "GoRoutine": {
     "prefix": "goroutine",
     "body": [
-    "go ${1:func}(${2:params})"
+    "go ${1:func}(${2:params}){",
+    " \t$0",
+    "}"
     ],
     "description": "Generate go routine with function"
   },
