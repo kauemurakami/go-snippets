@@ -3,7 +3,7 @@
 [![en](https://img.shields.io/badge/language-en-orange.svg)](https://github.com/kauemurakami/go-snippets/blob/main/README.md)
 [![Star on GitHub](https://img.shields.io/github/stars/kauemurakami/go-snippets.svg?style=flat&logo=github&colorB=deeppink&label=stars)](https://github.com/kauemurakami/get_snippets_extension)
 
-![](gofast.png)  
+<marquee direction="right" scrollamount=40>![](gofast.png)</marquee> 
 
 #### Extension for vscode with autocomplete snippets for GO codes.
 *Speed ​​up* your development process with shortcuts that free you from rewriting routine code, such as functions, variables, structs, etc., see the available snippets:<br/>
@@ -46,6 +46,18 @@ func main() {
 ```  
 ```gofile``` generates a code that is a little more complete than ```gomain```, also providing us with ```goinit``` <br/>
 
+### gotestfile  
+When writing ```gotestfile``` it will return us a code for a file that contains the import of ```testing``` and creation of the package with the initial test function, keeping the word ```Test``` for go to recognize it as a test function, the first and only attribute to be defined is the remaining name of the function after ```Test```, remembering that the second word after ```Test``` also starts with capital letter example:   
+```go
+package name
+
+import "testing" 
+
+func TestNameFunction(t *testing.T) {
+	
+}
+```  
+
 ### gofunc
 ![](assets/gofunc.gif)  
 When writing ```gofunc``` it will return us a function with autocompletes in the function name, parameter and return type, just switch with the TAB key after entering one by one, let's see what ```gofunc``` generates us:  
@@ -57,6 +69,13 @@ func name(params type)  returnType {
 ```
 Remembering that, initially ```name``` is the first attribute to be inserted, from a TAB and will jump to the ```params```, being able to insert one or more parameters separated by a comma, from another TAB and it will be in ```type``` which is the type of ```params``` in the last TAB it will define the return type ```returnType```, do the test.<br/>
 
+### gofunctest
+It generates a test function with the default parameters, see:  
+```go
+func TestNameFunction(t *testing.T) {
+	
+}
+```   
 ### gofuncempty  
 ![](assets/gofuncempty.gif)  
 Here you have the option of creating an empty function, without parameters and without returns, so when typing ```gofun``` it will appear, but in the case of an empty function we will use the command ```gofuncempty``` which gives us will generate:   
@@ -108,6 +127,32 @@ func name(nameinterface interface{}) {
 }
 ```
 As the first pre-selected attribute for renaming, ```name``` and with a TAB we also define ```nameinterface``` <br/>
+
+### goroutine
+Returns a function with the clause ```go``` to become a ```goroutine```:   
+```go
+go func(params){
+	
+}
+```
+### goroutineanon
+Creates an anonymous ```goroutine```:    
+```go
+go func(){
+	
+}()
+```  
+
+### goselect
+A structure very similar to a switch in decision making, but focused on use with competition, just use our ```goselect``` snippet to create a basic structure:   
+```go
+select {
+ case obj := <-channel1:
+		fmt.Println("a")
+	case obj := <-channel2:
+		fmt.Println("b")
+}
+```  
 
 ### gomap
 Creates a declaration of a map variable with key type and value type, in this case it is preselected for changing the ```varname```, ```keytype``` and ```valuetype```:  
