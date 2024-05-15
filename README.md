@@ -3,7 +3,7 @@
 [![en](https://img.shields.io/badge/language-en-orange.svg)](https://github.com/kauemurakami/go-snippets/blob/main/README.md)
 [![Star on GitHub](https://img.shields.io/github/stars/kauemurakami/go-snippets.svg?style=flat&logo=github&colorB=deeppink&label=stars)](https://github.com/kauemurakami/get_snippets_extension)
 
-![](gofast.png)  
+<marquee direction="right" scrollamount=40>![](gofast.png)</marquee> 
 
 #### Extension for vscode with autocomplete snippets for GO codes.
 *Speed ​​up* your development process with shortcuts that free you from rewriting routine code, such as functions, variables, structs, etc., see the available snippets:<br/>
