@@ -34,5 +34,17 @@
     - gotestfile -> generate file and function test to any package
     - gotest -> generate a function test
     - init add CLI to package
-#v2.0.0
+
+#v1.3.0
+  - Add more snippets
+    - gofunchttp -> generate code with sign a function to http request
+    - gowrite -> Generate a w.Write(json)
+    - gowriteheader -> Generate a w.WriteHeader(status)
+    - gomarshal -> Generate json from object with handle error
+    - gounmarshal -> Generate object from json with handle error
+    - goroutesfilepackage -> Generating setup of package routes that will be used in gosetuproutes
+    - goroute -> Creates a simple route to be added to the package_routes.go file
+    - gosetuproutes -> Generates the single route file that retrieves the packages routes and initializes them at once
+
+
   

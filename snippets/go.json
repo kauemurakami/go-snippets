@@ -72,7 +72,7 @@
     ],
     "description": "Generate a function which may result in an error"
   },
-   "GoTest": {
+   "GoFuncTest": {
     "prefix": "gofunctest",
     "body": [
       "func Test${2:NameFunction}(t *testing.T) {",
@@ -80,6 +80,15 @@
       "}"
     ],
     "description": "Generate a function test"
+  },
+  "GoFuncHTTP": {
+    "prefix": "gofunchtpp",
+    "body": [
+      "func ${1:FuncName}(w http.ResponseWriter, r *http.Request) {",
+      " \t$0",       
+      "}"
+    ],
+    "description": "Generate a function with http params"
   },
   "GoStruct": {
     "prefix": "gostruct",
@@ -124,6 +133,88 @@
       "${1:name} := ${2:val}"
     ],
     "description": "Generate a variable without type, inference"
+  },
+  "GoWiterHeader": {
+    "prefix": "gowriteheader",
+    "body": [
+      "w.WriteHeader(http.${1:status})"
+    ],
+    "description": "Generate a variable without type, inference"
+  },
+  "GoWriter": {
+    "prefix": "gowriter",
+    "body": [
+      "${1:varJSON}, err := json.Marshal(${2:objectToConvert})",
+      "if err != nil {",
+      " w.WriteHeader(http.StatusBadRequest)",
+      " w.Write([]byte(\"${3:ErrorMessage\"))",
+      " return",
+      "}",
+      "",
+      "w.WriteHeader(http.StatusOK)",
+      "w.Write(${1:varJSON})"
+    ],
+    "description": "Generate a variable json, or error and send json with response or error with http"
+  },
+   "GoMarshal": {
+    "prefix": "gomarshal",
+    "body": [
+      "var ${1:varname} *${2:varType}",
+      "${3:varJSON}, err := json.Marshal(*${1:varname})",
+	    "if err != nil {",
+        "w.WriteHeader(http.StatusBadRequest)",
+        "w.Write([]byte(\"ErrorMessage\"))",
+      "}"
+    ],
+    "description": "convet a object in json"
+  },
+   "GoUnmarshal": {
+    "prefix": "gounsmarshal",
+    "body": [
+      "var ${1:varname} *${2:varType}",
+      "if err = json.Unmarshal(body, &${1:varname}); err != nil {",
+      " w.WriteHeader(http.StatusInternalServerError)",
+      " w.Write([]byte(\"${3:ErrorMessage}\"))",
+      " return",
+      "}"
+    ],
+    "description": "Convert json in object"
+  },
+  "GoRoutesFilePackage": {
+    "prefix": "goroutespackage",
+    "body": [
+      "package ${1:packagename} //use same package name inside your package",
+
+      "func Setup${2:PackageName}Routes(router *mux.Router) {",
+        "router.HandleFunc(\"/${1:packagename}\", CreateUser).Methods(http.MethodPost)",
+        "router.HandleFunc(\"/${1:packagename}\", GetUsers).Methods(http.MethodGet)",
+        "router.HandleFunc(\"/${1:packagename}/{id}\", GetUserById).Methods(http.MethodGet)",
+        "router.HandleFunc(\"/${1:packagename}/{id}\", DeleteUserById).Methods(http.MethodDelete)",
+        "router.HandleFunc(\"/${1:packagename}\", UpdateUserById).Methods(http.MethodPut)",
+    "}"
+    ],
+    "description": "Generate package routes file"
+  },
+  "GoSetupRoutes": {
+    "prefix": "gosetuproutes",
+    "body": [
+      "package ${1:packageName} //use same package name inside your package",
+      "func SetupAppRoutes(router *mux.Router) {",
+        "//examples",
+        "users.SetupUserRoutes(router)",
+        "product.SetupProductsRoutes(router)",
+        "sales.SetupSalesRoutes(router)",
+        "categories.SetupCategoriesRoutes(router)",
+      "}"
+    ],
+    "description": "Generate a unique file to setup all packages routes"
+  },
+  "GoRoute": {
+    "prefix": "goroute",
+    "body": [
+      "router.HandleFunc(\"/${1:routeName}\", ${2:Func}).Methods(http.${3:MethodHTPP})"
+    ],
+    "description": "Generate a single route"
   },
   "GoIf": {
     "prefix": "goif",
