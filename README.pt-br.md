@@ -97,6 +97,15 @@ func name(params) (returnType, error) {
 ```
 Com o mesmo modus operandi dos outros snippets que possuem mais de um valor para ser alterado, essa função também segue esses padrões, podendo ser alternadas usando TAB ao declarar um valor e ir para o próximo.<br/>
 
+### gofunchttp
+Ao digitar ```gofunchttp``` ira nos gerar uma função básica de http como:  
+```go
+func FunctionName(w http.ResponseWriter, r *http.Request) {
+	
+}
+```
+Crtl+S faz um auto importe dos packages que serão usados mas ainda não foram importados.  
+
 ### gostruct
 ![](assets/gostruct.gif)  
 Aqui ao digitar ```gostruct``` você irá criar um modelo de um struct, vejamos:  
@@ -185,6 +194,124 @@ Aqui ao digitar ```govar``` já aparecerá a opção ```govartype```, diferente 
 var name type
 ```
 Possuindo o mesmo comportamento, onde ```name``` está pré selecionado para alteração e ao dar um TAB pode alterar o ```type```.<br/>
+
+### gowriteheader
+Ao começar a digitar ```gowriteheader```, logo surgira o snippet, selecione ele e ele retornará o seguinte código:  
+```go
+w.WriteHeader(http.StatusBadRequest)
+```
+### gowriter
+```gowriter``` nos traz uma solução completa para retornar uma resposta em json para o cliente, usando ```json.Marshal(obj)``` para ser convertido em um json para a variavel ```varJSON```, também verificamos se algo sair errado durante isso, e retornamos uma mensagem de erro, caso tudo tenha ocorrido bem, podemos retornar nosso json ao fim da função.  
+```go
+varJson, err := json.Marshal(objectToConvert)
+if err != nil {
+ w.WriteHeader(http.StatusBadRequest)
+ w.Write([]byte("ErrorMessage"))
+ return
+}
+
+w.WriteHeader(http.StatusOK)
+w.Write(varJson)
+```  
+Lembrando que as variáveis pré selecionadas para alteração são:  
+ 1. varJson (TAB) 
+ 2. objectToConvert (TAB)
+ 3. ErrorMessage   
+
+### gomarshal
+Ao começar a digitar ```gomarshal``` e selecionar o snippet, ele nos gerará um código para converter um struct ou outro tipo em um ```json``` com a função ```json.Marshal```, veja no exemplo:  
+```go
+var varname *varType
+varJSON, err := json.Marshal(*varname)
+if err != nil {
+  w.WriteHeader(http.StatusBadRequest)
+  w.Write([]byte("ErrorMessage"))
+}
+```  
+Lembrando que as variáveis pré selecionadas para alteração são:  
+ 1. varname (TAB) 
+ 2. varType (TAB)
+ 3. ErrorMessage  
+
+### gounmarshal
+Ao começara digitar ```gounmarshal```geramos um código que usa ```json.Unmarshal``` para "traduzir" nosso objeto ```json``` como um ```body``` de uma requisição em um struct, ou variável esperados, exemplo:  
+```go
+	var varname *varType
+	if err = json.Unmarshal(body, &varname); err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		w.Write(http_error.ResponseError("ErrorMessage"))
+		return
+	}
+```  
+Lembrando que as variáveis pré selecionadas para alteração são:  
+ 1. varname (TAB) 
+ 2. varType (TAB)
+ 3. ErrorMessage  
+
+### goroutespackage
+Como uso uma arquitetura modular que venho desenvolvendo a partir de [outro projeto meu](https://github.com/kauemurakami/getx_pattern), meus packages são meus modulos, cada package contido em ```/internal```, deve conter os mesmo arquivos e definições, falarei por alto aqui para exemplificar o porquê de tratar cas rotas por módulo e centralizar sua inicialização nos próximos snippets.  
+Imagine que temos nosso diretório ```/internal``` que é responsável por todos os nossos packages, imagine um package ```/auth``` básico, teríamos esses arquivos:  
+ + auth.go -> package auth
+ + auth_test.go -> package auth
+ + auth_routes.go -> package auth  
+ Todos usando o mesmo package name, onde dentro de ```auth_routes.go``` vamos começar digitando ```goroutespackage```, antes mesmo de digitar por completo, já irá aparecer a sugestão de usá-lo.  
+ Ao selecionar ele nos retorna esse código:  
+ ```go
+ package auth
+
+import (
+	"net/http"
+
+	"github.com/gorilla/mux"
+)
+
+func SetupAuthRoutes(router *mux.Router) {
+	router.HandleFunc("/auth/signin", Signin).Methods(http.MethodPost)
+	router.HandleFunc("/auth/signup", Signup).Methods(http.MethodPost)
+}
+ ```  
+ Mais adiante mostrarei de onde vem as funções...  
+ Lembrando que as variáveis pré selecionadas para alteração são:  
+ 1. packageName (TAB) 
+ 2. FuncName no caso fica entre Setup{FuncName}Routes  
+ 3. Repare que o mesmo package name que escolher será usado na rota inicial, neste caso como é auth, a primeira rota fica /auth.  
+ Isso deve ficar bem claro para os snippets a seguir
+
+### goroute
+Cria uma rota simples ao digitar ```goroute``` ele nos gera o seguinte código:  
+```go
+router.HandleFunc("/routeName", Function).Methods(http.MethodPost)
+```  
+Isso serve pra você adicionar rapidamente rotas ao seu arquivo de rotas criado anteriormente.
+Lembrando que as variáveis pré selecionadas para alteração são:  
+ 1. routeName (TAB) 
+ 2. Function (TAB) 
+ 3. MethodHTTP  
+  
+### gosetuproutes
+Ao começar a digitar ```gosetuproutes``` ele nos mostrará um snippet para gerar uma código em um arquivo vazio que irá reunir todas as todas que adicionamos nos packages para uma inicialização única, então seguindo o exemplo das rotas de ```/auth``` vamo ver como fica nosso arquivo ```routes.go```,
+lembrando que pra isso eu criei um diretório na raiz do projeto chamado ```/routes``` que contém o nosso arquivo ```routes.go```, fiz isso pois esse arquivo irá servir todos os nossos packages,portanto deve estar separado de certa forma, para servir a aplicação.  
+Ao criar o repositório e o arquivo.go vamos ver o resultado do nosso snippet:  
+```go
+// /routes/routes.go
+package routes
+// imports automaticos com crtl + s
+func SetupAppRoutes() *mux.Router {
+	// users.SetupUserRoutes(router)
+	router := mux.NewRouter()
+	auth.SetupAuthRoutes(router)
+	return router
+}
+```
+Após isso, basta usar essa função ```SetupAppRoutes``` na main dessa forma:  
+```go
+func main(){
+  ...
+  router := routes.SetupAppRoutes()
+  ...
+}
+```
+E todas as suas rotas estarão disponíveis
 
 ### goif  
 Ao digitarmos ```goif``` e selecionarmos o auto complete, veremos o seguinte trecho de código simples:  
